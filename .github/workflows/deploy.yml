@@ -7,9 +7,9 @@ jobs:
   lint:
     strategy:
       matrix:
-        platform: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ubuntu-16.04
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
     steps:
       - name: hello world
         run: |
-          echo "Hello world"
+          uname -a
