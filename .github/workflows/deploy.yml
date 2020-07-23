@@ -1,4 +1,8 @@
 name: action test
+on:
+  push:
+    branches:
+      - master
 jobs:
   lint:
     strategy:
@@ -6,6 +10,8 @@ jobs:
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - name: Check out code
+        uses: actions/checkout@v1
       - name: hello world
         run: |
           uname -a
