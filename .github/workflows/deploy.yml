@@ -1,0 +1,15 @@
+name: action test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  lint:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ubuntu-16.04
+    steps:
+      - name: hello world
+        run: |
+          echo "Hello world"
