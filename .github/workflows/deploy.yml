@@ -1,8 +1,4 @@
 name: action test
-on:
-  push:
-    branches:
-      - master
 jobs:
   lint:
     strategy:
